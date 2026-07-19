@@ -86,12 +86,12 @@ def normalize_phone(phone):
         phone = '+' + phone
     return phone
 
-# ------------------ HTML (with updated colors & text) ------------------
+# ------------------ HTML (Chocolate Theme) ------------------
 HTML = """
 <!DOCTYPE html>
 <html>
 <head>
-    <title>⚡ ARJUN THAKUR • TELEGRAM BOT ⚡</title>
+    <title>🍫 ARJUN THAKUR • TELEGRAM BOT 🍫</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', 'Poppins', Arial, sans-serif; }
@@ -102,16 +102,17 @@ HTML = """
             text-transform: none;
         }
         body {
-            background: #2a2a2a; /* antimon metallic grey */
-            color: #e0e0e0;
+            background: #2a1404; /* deep chocolate */
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(180, 120, 70, 0.08) 2px, transparent 2px),
+                radial-gradient(circle at 80% 70%, rgba(180, 120, 70, 0.05) 2px, transparent 2px),
+                linear-gradient(145deg, #3b1f0a 0%, #1f0f03 100%);
+            background-size: 40px 40px, 60px 60px, cover;
+            color: #f5e6ca;
             padding: 20px 15px;
             min-height: 100vh;
             position: relative;
             overflow-x: hidden;
-            background-image: 
-                linear-gradient(135deg, rgba(80,80,80,0.1) 0%, rgba(40,40,40,0.1) 100%),
-                repeating-linear-gradient(45deg, #333 0px, #333 2px, #444 2px, #444 4px);
-            background-blend-mode: overlay;
         }
         body::before {
             content: '';
@@ -120,9 +121,7 @@ HTML = """
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: radial-gradient(circle at 20% 30%, rgba(200,200,200,0.03) 1px, transparent 1px),
-                              radial-gradient(circle at 80% 70%, rgba(255,255,255,0.02) 1px, transparent 1px);
-            background-size: 40px 40px, 60px 60px;
+            background-image: repeating-linear-gradient(45deg, rgba(120, 80, 40, 0.03) 0px, rgba(120, 80, 40, 0.03) 2px, rgba(80, 50, 20, 0.03) 2px, rgba(80, 50, 20, 0.03) 4px);
             pointer-events: none;
             z-index: 0;
         }
@@ -135,8 +134,8 @@ HTML = """
             width: 100%;
             height: auto;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(200,200,200,0.15);
-            border: 1px solid rgba(200,200,200,0.2);
+            box-shadow: 0 4px 15px rgba(200, 150, 80, 0.3);
+            border: 1px solid #d4af37;
             object-fit: cover;
             transition: transform 0.3s ease;
         }
@@ -157,21 +156,22 @@ HTML = """
             backdrop-filter: blur(8px);
         }
         .login-modal .modal-content {
-            background: rgba(30,30,30,0.95);
+            background: rgba(30, 15, 5, 0.95);
             border-radius: 30px;
             padding: 30px 20px;
             width: 95%;
             max-width: 400px;
             text-align: center;
-            border: 2px solid #b0b0b0;
-            box-shadow: 0 20px 40px rgba(200,200,200,0.15);
+            border: 2px solid #d4af37;
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
             position: relative;
         }
         .login-modal .modal-content h2 {
-            color: #b0b0b0;
+            color: #d4af37;
             font-size: 26px;
             letter-spacing: 2px;
             margin: 0 0 10px 0;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
         }
         .login-modal .modal-content .input-group {
             text-align: left;
@@ -180,7 +180,7 @@ HTML = """
         .login-modal .modal-content .input-group label {
             display: block;
             font-size: 12px;
-            color: #aaa;
+            color: #f5e6ca;
             margin-bottom: 5px;
             letter-spacing: 1px;
         }
@@ -189,17 +189,18 @@ HTML = """
             padding: 14px 18px;
             border-radius: 30px;
             border: none;
-            background: rgba(255,255,255,0.9);
+            background: rgba(255, 240, 210, 0.9);
             font-size: 16px;
             transition: all 0.3s ease;
+            color: #2a1404;
         }
         .login-modal .modal-content input:focus {
-            box-shadow: 0 0 0 3px rgba(200,200,200,0.3);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.4);
             transform: scale(1.01);
         }
         .login-modal .modal-content button {
-            background: linear-gradient(90deg, #b0b0b0, #666);
-            color: white;
+            background: linear-gradient(90deg, #d4af37, #b8860b);
+            color: #2a1404;
             padding: 14px;
             border-radius: 30px;
             border: none;
@@ -207,17 +208,17 @@ HTML = """
             font-weight: bold;
             cursor: pointer;
             margin-top: 20px;
-            box-shadow: 0 4px 15px rgba(100,100,100,0.3);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
             transition: all 0.3s ease;
             font-size: 18px;
             letter-spacing: 1px;
         }
         .login-modal .modal-content button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(100,100,100,0.5);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
         }
         .login-modal .error-msg {
-            color: #ff5588;
+            color: #ff6b6b;
             margin-top: 10px;
             font-size: 14px;
         }
@@ -233,12 +234,12 @@ HTML = """
             width: 100%;
         }
         .toast {
-            background: rgba(30,30,30,0.95);
+            background: rgba(30, 15, 5, 0.95);
             backdrop-filter: blur(8px);
-            border: 1px solid #b0b0b0;
+            border: 1px solid #d4af37;
             border-radius: 16px;
             padding: 16px 20px;
-            color: white;
+            color: #f5e6ca;
             font-weight: 500;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             animation: slideIn 0.4s ease, fadeOut 0.5s ease 4s forwards;
@@ -248,9 +249,9 @@ HTML = """
             font-size: 14px;
             letter-spacing: 0.3px;
         }
-        .toast.success { border-color: #00cc66; }
-        .toast.error { border-color: #ff5588; }
-        .toast.info { border-color: #b0b0b0; }
+        .toast.success { border-color: #d4af37; }
+        .toast.error { border-color: #ff6b6b; }
+        .toast.info { border-color: #d4af37; }
         .toast .icon { font-size: 22px; flex-shrink: 0; }
         @keyframes slideIn {
             from { opacity: 0; transform: translateX(60px); }
@@ -276,19 +277,19 @@ HTML = """
             backdrop-filter: blur(6px);
         }
         .update-modal .modal-content, .task-detail-modal .modal-content {
-            background: rgba(30,30,30,0.95);
+            background: rgba(30, 15, 5, 0.95);
             border-radius: 24px;
             padding: 25px;
             width: 95%;
             max-width: 420px;
             text-align: center;
-            border: 2px solid #b0b0b0;
-            box-shadow: 0 20px 40px rgba(200,200,200,0.1);
+            border: 2px solid #d4af37;
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15);
         }
         .update-modal .modal-content h2, .task-detail-modal .modal-content h2 {
             margin-top: 5px;
             margin-bottom: 15px;
-            color: #b0b0b0;
+            color: #d4af37;
             font-size: 20px;
         }
         .update-modal .modal-content .input-group {
@@ -298,7 +299,7 @@ HTML = """
         .update-modal .modal-content .input-group label {
             display: block;
             font-size: 12px;
-            color: #aaa;
+            color: #f5e6ca;
             margin-bottom: 5px;
         }
         .update-modal .modal-content input {
@@ -306,12 +307,13 @@ HTML = """
             padding: 12px 16px;
             border-radius: 30px;
             border: none;
-            background: rgba(255,255,255,0.9);
+            background: rgba(255, 240, 210, 0.9);
             font-size: 16px;
+            color: #2a1404;
         }
         .update-modal .modal-content button {
-            background: linear-gradient(90deg, #b0b0b0, #666);
-            color: white;
+            background: linear-gradient(90deg, #d4af37, #b8860b);
+            color: #2a1404;
             padding: 12px;
             border-radius: 30px;
             border: none;
@@ -319,22 +321,22 @@ HTML = """
             font-weight: bold;
             cursor: pointer;
             margin-top: 12px;
-            box-shadow: 0 4px 15px rgba(100,100,100,0.3);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
             transition: all 0.3s ease;
         }
         .update-modal .modal-content button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(100,100,100,0.5);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
         }
         .update-modal .error-msg {
-            color: #ff5588;
+            color: #ff6b6b;
             margin-top: 10px;
             font-size: 12px;
         }
         .task-detail-modal .modal-content {
             max-width: 600px;
-            border-color: #ffaa00;
-            box-shadow: 0 0 30px rgba(255,170,0,0.15);
+            border-color: #d4af37;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
         }
         .task-detail-modal .modal-content .detail-row {
             display: flex;
@@ -344,7 +346,7 @@ HTML = """
             font-size: 14px;
         }
         .task-detail-modal .modal-content .detail-row .label {
-            color: #aaa;
+            color: #f5e6ca;
         }
         .task-detail-modal .modal-content .detail-row .value {
             color: #fff;
@@ -354,8 +356,8 @@ HTML = """
             display: inline-block;
             padding: 3px 12px;
             border-radius: 20px;
-            background: #00cc66;
-            color: #fff;
+            background: #d4af37;
+            color: #2a1404;
             font-weight: bold;
             font-size: 12px;
             margin: 5px 0;
@@ -377,11 +379,11 @@ HTML = """
             transition: all 0.3s ease;
         }
         .task-detail-modal .modal-content .btn-group .update-btn {
-            background: linear-gradient(90deg, #ffaa00, #ff6600);
-            color: white;
+            background: linear-gradient(90deg, #d4af37, #b8860b);
+            color: #2a1404;
         }
         .task-detail-modal .modal-content .btn-group .delete-btn {
-            background: #ff0055;
+            background: #b22222;
             color: white;
         }
         .main-content {
@@ -394,26 +396,26 @@ HTML = """
             margin-bottom: 5px;
             font-weight: 900;
             letter-spacing: 3px;
-            background: linear-gradient(135deg, #b0b0b0, #f0f0f0);
+            background: linear-gradient(135deg, #d4af37, #f5e6ca);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             font-size: 40px;
-            text-shadow: 0 2px 15px rgba(200,200,200,0.2);
+            text-shadow: 0 2px 15px rgba(212, 175, 55, 0.3);
         }
         .subtitle {
             text-align: center;
             margin-bottom: 30px;
             font-size: 14px;
-            color: #ffaa00;
+            color: #d4af37;
             letter-spacing: 2px;
             font-weight: bold;
-            text-shadow: 0 0 6px rgba(255,170,0,0.3);
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
         }
         .subtitle small {
             display: block;
             font-size: 11px;
-            color: #aaa;
+            color: #f5e6ca;
             letter-spacing: 1px;
         }
         .cards-container {
@@ -426,9 +428,9 @@ HTML = """
         }
         .card {
             width: 100%;
-            background: rgba(20,20,20,0.85);
+            background: rgba(20, 10, 5, 0.85);
             border-radius: 30px;
-            border: 2px solid #666;
+            border: 2px solid #8b6b3d;
             box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             overflow: hidden;
@@ -441,25 +443,25 @@ HTML = """
         .card:hover {
             transform: translateY(-4px);
             box-shadow: 0 15px 35px -10px rgba(0,0,0,0.7);
-            border-color: #888;
+            border-color: #d4af37;
         }
         .card.active {
-            border-color: #b0b0b0;
-            box-shadow: 0 0 25px rgba(200,200,200,0.1), 0 10px 30px rgba(0,0,0,0.5);
+            border-color: #d4af37;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.15), 0 10px 30px rgba(0,0,0,0.5);
         }
-        /* Card-specific border colors */
+        /* Card-specific border colors (golden theme) */
         .card-token { border-color: #d4af37; }
-        .card-token.active { border-color: #d4af37; box-shadow: 0 0 25px rgba(212,175,55,0.15); }
-        .card-1 { border-color: #00aaff; }
-        .card-1.active { border-color: #00aaff; box-shadow: 0 0 25px rgba(0,170,255,0.15); }
-        .card-2 { border-color: #00cc66; }
-        .card-2.active { border-color: #00cc66; box-shadow: 0 0 25px rgba(0,204,102,0.15); }
-        .card-3 { border-color: #ff8800; }
-        .card-3.active { border-color: #ff8800; box-shadow: 0 0 25px rgba(255,136,0,0.15); }
-        .card-4 { border-color: #aa44ff; }
-        .card-4.active { border-color: #aa44ff; box-shadow: 0 0 25px rgba(170,68,255,0.15); }
-        .card-admin { border-color: #ff4444; }
-        .card-admin.active { border-color: #ff4444; box-shadow: 0 0 25px rgba(255,68,68,0.15); }
+        .card-token.active { border-color: #d4af37; box-shadow: 0 0 25px rgba(212, 175, 55, 0.2); }
+        .card-1 { border-color: #d4af37; }
+        .card-1.active { border-color: #d4af37; box-shadow: 0 0 25px rgba(212, 175, 55, 0.15); }
+        .card-2 { border-color: #d4af37; }
+        .card-2.active { border-color: #d4af37; box-shadow: 0 0 25px rgba(212, 175, 55, 0.15); }
+        .card-3 { border-color: #d4af37; }
+        .card-3.active { border-color: #d4af37; box-shadow: 0 0 25px rgba(212, 175, 55, 0.15); }
+        .card-4 { border-color: #d4af37; }
+        .card-4.active { border-color: #d4af37; box-shadow: 0 0 25px rgba(212, 175, 55, 0.15); }
+        .card-admin { border-color: #b22222; }
+        .card-admin.active { border-color: #b22222; box-shadow: 0 0 25px rgba(178, 34, 34, 0.15); }
 
         .card-header {
             padding: 18px 25px;
@@ -470,13 +472,13 @@ HTML = """
             justify-content: space-between;
             gap: 10px;
             flex-wrap: wrap;
-            border-bottom: 2px solid rgba(255,255,255,0.05);
+            border-bottom: 2px solid rgba(212, 175, 55, 0.1);
             border-radius: 30px 30px 0 0;
             user-select: none;
             transition: border-color 0.4s ease;
         }
         .card.active .card-header {
-            border-bottom-color: rgba(255,255,255,0.1);
+            border-bottom-color: rgba(212, 175, 55, 0.3);
         }
         .card-header h2 {
             flex: 1;
@@ -485,7 +487,7 @@ HTML = """
             font-size: 20px;
             letter-spacing: 1px;
             text-shadow: 0 1px 5px rgba(0,0,0,0.3);
-            color: #fff;
+            color: #f5e6ca;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -493,34 +495,34 @@ HTML = """
         }
         /* Header color per card */
         .card-token .card-header h2 { color: #d4af37; }
-        .card-1 .card-header h2 { color: #00aaff; }
-        .card-2 .card-header h2 { color: #00cc66; }
-        .card-3 .card-header h2 { color: #ff8800; }
-        .card-4 .card-header h2 { color: #aa44ff; }
-        .card-admin .card-header h2 { color: #ff4444; }
+        .card-1 .card-header h2 { color: #d4af37; }
+        .card-2 .card-header h2 { color: #d4af37; }
+        .card-3 .card-header h2 { color: #d4af37; }
+        .card-4 .card-header h2 { color: #d4af37; }
+        .card-admin .card-header h2 { color: #ff6b6b; }
 
         .instruction {
             font-size: 10px;
-            color: #aaa;
+            color: #f5e6ca;
             padding: 8px 15px;
             background: rgba(0,0,0,0.2);
             border-radius: 0 0 20px 20px;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
             margin-top: 2px;
             transition: all 0.3s ease;
         }
         .card-token .instruction { color: #d4af37; border-left: 3px solid #d4af37; }
-        .card-1 .instruction { color: #00aaff; border-left: 3px solid #00aaff; }
-        .card-2 .instruction { color: #00cc66; border-left: 3px solid #00cc66; }
-        .card-3 .instruction { color: #ff8800; border-left: 3px solid #ff8800; }
-        .card-4 .instruction { color: #aa44ff; border-left: 3px solid #aa44ff; }
-        .card-admin .instruction { color: #ff4444; border-left: 3px solid #ff4444; }
+        .card-1 .instruction { color: #d4af37; border-left: 3px solid #d4af37; }
+        .card-2 .instruction { color: #d4af37; border-left: 3px solid #d4af37; }
+        .card-3 .instruction { color: #d4af37; border-left: 3px solid #d4af37; }
+        .card-4 .instruction { color: #d4af37; border-left: 3px solid #d4af37; }
+        .card-admin .instruction { color: #ff6b6b; border-left: 3px solid #ff6b6b; }
 
         .card-header .status-icon {
-            color: #b0b0b0;
+            color: #d4af37;
             font-size: 22px;
             transition: transform 0.4s ease;
-            filter: drop-shadow(0 2px 5px rgba(200,200,200,0.2));
+            filter: drop-shadow(0 2px 5px rgba(212, 175, 55, 0.2));
         }
         .card.active .status-icon {
             transform: rotate(180deg);
@@ -550,10 +552,10 @@ HTML = """
             display: block;
             font-size: 13px;
             font-weight: bold;
-            color: #aaa;
+            color: #f5e6ca;
             margin-bottom: 5px;
             letter-spacing: 0.5px;
-            text-shadow: 0 0 8px rgba(170,170,170,0.1);
+            text-shadow: 0 0 8px rgba(212, 175, 55, 0.1);
         }
         input, select, button, .custom-file-label {
             width: 100%;
@@ -563,16 +565,16 @@ HTML = """
             font-size: 16px;
             outline: none;
             transition: all 0.3s ease;
-            background: rgba(255, 255, 255, 0.95);
-            color: #111;
+            background: rgba(255, 240, 210, 0.95);
+            color: #2a1404;
             font-weight: 500;
             border: 1px solid transparent;
         }
         input:focus, select:focus {
-            background: #fff;
-            box-shadow: 0 0 0 3px rgba(200,200,200,0.3);
+            background: #f5e6ca;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.3);
             transform: scale(1.005);
-            border-color: #b0b0b0;
+            border-color: #d4af37;
         }
         .custom-file-upload {
             position: relative;
@@ -583,46 +585,46 @@ HTML = """
             display: none;
         }
         .custom-file-label {
-            background: linear-gradient(90deg, #b0b0b0, #666);
-            color: white;
+            background: linear-gradient(90deg, #d4af37, #b8860b);
+            color: #2a1404;
             font-weight: 700;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(100,100,100,0.3);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
             text-align: center;
             display: block;
             letter-spacing: 1px;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(212, 175, 55, 0.2);
         }
         .custom-file-label:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(100,100,100,0.4);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
         }
         button {
-            background: linear-gradient(90deg, #b0b0b0, #666);
-            color: white;
+            background: linear-gradient(90deg, #d4af37, #b8860b);
+            color: #2a1404;
             font-weight: 700;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(100,100,100,0.3);
-            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.2);
             transition: all 0.3s ease;
         }
         button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(100,100,100,0.5);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
         }
         .green-btn {
-            background: linear-gradient(90deg, #00cc66, #009933);
-            box-shadow: 0 4px 15px rgba(0, 204, 102, 0.3);
+            background: linear-gradient(90deg, #b8860b, #8b6b3d);
+            box-shadow: 0 4px 15px rgba(184, 134, 11, 0.3);
         }
         .level-text {
             font-size: 11px;
-            color: #ffdd44;
+            color: #d4af37;
             background: rgba(0,0,0,0.5);
             display: inline-block;
             padding: 4px 14px;
             border-radius: 20px;
             margin-bottom: 6px;
-            border: 1px solid #ffdd44;
+            border: 1px solid #d4af37;
         }
         .task-cards-grid {
             display: grid;
@@ -634,7 +636,7 @@ HTML = """
             background: rgba(0,0,0,0.7);
             border-radius: 20px;
             padding: 15px 15px 12px;
-            border: 1px solid rgba(255,170,0,0.2);
+            border: 1px solid rgba(212, 175, 55, 0.2);
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             display: flex;
@@ -644,8 +646,8 @@ HTML = """
         }
         .task-card:hover {
             transform: translateY(-4px);
-            border-color: #ffaa00;
-            box-shadow: 0 8px 25px rgba(255,170,0,0.1);
+            border-color: #d4af37;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.1);
         }
         .task-card .task-title {
             display: flex;
@@ -653,23 +655,23 @@ HTML = """
             gap: 10px;
             font-size: 16px;
             font-weight: bold;
-            color: #ffaa00;
+            color: #d4af37;
             letter-spacing: 1px;
             margin-bottom: 6px;
-            text-shadow: 0 0 8px rgba(255,170,0,0.2);
+            text-shadow: 0 0 8px rgba(212, 175, 55, 0.2);
         }
         .task-card .task-title .avatar {
             width: 36px;
             height: 36px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid #ffaa00;
+            border: 2px solid #d4af37;
             background: #1a1a2e;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            color: #ffaa00;
+            color: #d4af37;
             font-size: 14px;
         }
         .task-card .task-row {
@@ -680,7 +682,7 @@ HTML = """
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
         .task-card .task-row .label {
-            color: #aaa;
+            color: #f5e6ca;
         }
         .task-card .task-row .value {
             color: #fff;
@@ -690,18 +692,18 @@ HTML = """
             display: inline-block;
             padding: 2px 12px;
             border-radius: 20px;
-            background: #00cc66;
-            color: #fff;
+            background: #d4af37;
+            color: #2a1404;
             font-size: 11px;
             font-weight: bold;
             text-align: center;
         }
         .task-card .uptime-text {
-            color: #00ffaa;
+            color: #d4af37;
             font-weight: bold;
         }
         .task-card .next-msg {
-            color: #ffaa44;
+            color: #d4af37;
             font-weight: bold;
         }
         .task-card .btn-group-mini {
@@ -722,36 +724,36 @@ HTML = """
             min-width: 70px;
         }
         .task-card .btn-group-mini .update-btn {
-            background: linear-gradient(90deg, #ffaa00, #ff6600);
-            color: white;
+            background: linear-gradient(90deg, #d4af37, #b8860b);
+            color: #2a1404;
         }
         .task-card .btn-group-mini .delete-btn {
-            background: #ff0055;
+            background: #b22222;
             color: white;
         }
         .admin-task-card {
-            border-color: rgba(255,68,255,0.3);
+            border-color: rgba(255, 107, 107, 0.3);
         }
         .admin-task-card:hover {
-            border-color: #ff44ff;
-            box-shadow: 0 8px 25px rgba(255,68,255,0.1);
+            border-color: #ff6b6b;
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.1);
         }
         .admin-task-card .task-title {
-            color: #ff44ff;
+            color: #ff6b6b;
         }
         .admin-task-card .task-title .avatar {
-            border-color: #ff44ff;
+            border-color: #ff6b6b;
         }
         .task-card-separator {
             border: none;
-            border-top: 1px solid rgba(255,170,0,0.1);
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
             margin: 15px 0 8px;
             width: 100%;
         }
         .no-tasks {
             text-align: center;
             padding: 25px;
-            color: #888;
+            color: #f5e6ca;
             font-size: 14px;
         }
         .hidden { display: none; }
@@ -764,18 +766,18 @@ HTML = """
             width: 18px;
             height: 18px;
             border: 3px solid transparent;
-            border-top-color: white;
+            border-top-color: #2a1404;
             border-radius: 50%;
             animation: spin 0.6s linear infinite;
             display: inline-block;
         }
         @keyframes spin { to { transform: rotate(360deg); } }
         .card-admin .card-header {
-            border-bottom-color: #ff4444;
+            border-bottom-color: #b22222;
         }
         .card-admin.active {
-            border-color: #ff4444;
-            box-shadow: 0 0 25px rgba(255,68,68,0.15), 0 10px 30px rgba(0,0,0,0.5);
+            border-color: #b22222;
+            box-shadow: 0 0 25px rgba(178, 34, 34, 0.15), 0 10px 30px rgba(0,0,0,0.5);
         }
         .card-admin.hidden-admin {
             display: none !important;
@@ -790,7 +792,7 @@ HTML = """
             margin-right: auto;
         }
         .logout-btn {
-            background: linear-gradient(90deg, #ff0055, #ff3300);
+            background: linear-gradient(90deg, #b22222, #8b0000);
             color: white;
             border: none;
             padding: 14px 20px;
@@ -798,7 +800,7 @@ HTML = """
             font-weight: bold;
             font-size: 16px;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(255,0,85,0.3);
+            box-shadow: 0 4px 15px rgba(178, 34, 34, 0.3);
             transition: all 0.3s ease;
             letter-spacing: 1px;
             width: 100%;
@@ -806,7 +808,7 @@ HTML = """
         }
         .logout-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255,0,85,0.5);
+            box-shadow: 0 6px 20px rgba(178, 34, 34, 0.5);
         }
         @media(max-width: 600px) {
             .card-header { flex-direction: column; text-align: center; }
@@ -832,49 +834,49 @@ HTML = """
             transition: background 0.3s ease;
         }
         .group-item:hover {
-            background: rgba(200,200,200,0.1);
+            background: rgba(212, 175, 55, 0.1);
         }
         .group-item img {
             width: 40px;
             height: 40px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid #b0b0b0;
+            border: 2px solid #d4af37;
         }
         .group-item .group-info {
             flex: 1;
         }
         .group-item .group-info strong {
-            color: #fff;
+            color: #f5e6ca;
         }
         .group-item .group-info small {
-            color: #aaa;
+            color: #f5e6ca;
         }
         .selected-group-card {
             display: flex;
             align-items: center;
             gap: 12px;
             padding: 12px;
-            background: rgba(200,200,200,0.1);
+            background: rgba(212, 175, 55, 0.1);
             border-radius: 12px;
             margin-top: 10px;
-            border: 1px solid #b0b0b0;
+            border: 1px solid #d4af37;
         }
         .selected-group-card img {
             width: 48px;
             height: 48px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid #b0b0b0;
+            border: 2px solid #d4af37;
         }
-        .task-card .task-row .value.target-val { color: #b0b0b0; }
-        .task-card .task-row .value.file-val { color: #00ff88; }
-        .task-card .task-row .value.hater-val { color: #ffaa44; }
-        .task-card .task-row .value.speed-val { color: #ff66cc; }
-        .task-card .task-row .value.last-val { color: #ff8844; }
-        .task-card .task-row .value.status-val { color: #00cc66; }
-        .task-card .task-row .value.uptime-val { color: #00ffaa; }
-        .task-card .task-row .value.next-val { color: #ffaa44; }
+        .task-card .task-row .value.target-val { color: #d4af37; }
+        .task-card .task-row .value.file-val { color: #d4af37; }
+        .task-card .task-row .value.hater-val { color: #d4af37; }
+        .task-card .task-row .value.speed-val { color: #d4af37; }
+        .task-card .task-row .value.last-val { color: #d4af37; }
+        .task-card .task-row .value.status-val { color: #d4af37; }
+        .task-card .task-row .value.uptime-val { color: #d4af37; }
+        .task-card .task-row .value.next-val { color: #d4af37; }
     </style>
 </head>
 <body>
@@ -883,18 +885,18 @@ HTML = """
 <div id="loginModal" class="login-modal">
     <div class="modal-content">
         <div class="bot-banner-container">
-            <img src="https://i.ibb.co/FqV2CKVd/IMG-20260610-115404.png" class="bot-banner-img">
+            <img src="https://i.ibb.co/5xg0T8BH/IMG-20260719-153935.jpg" alt="Banner" class="bot-banner-img">
         </div>
-        <h2>ARJUN THAKUR BOT SYSTEM</h2>
+        <h2>🍫 ARJUN THAKUR</h2>
         <div class="input-group">
-            <label>USERNAME ARJUNTHAKUR</label>
+            <label>USERNAME</label>
             <input type="text" id="loginUsername" placeholder="ENTER USERNAME" autofocus>
         </div>
         <div class="input-group">
-            <label>PASSWORD ARJUNTHAKUR</label>
+            <label>PASSWORD</label>
             <input type="password" id="loginPassword" placeholder="ENTER PASSWORD">
         </div>
-        <button onclick="attemptLogin()">➡️ UNLOCK</button>
+        <button onclick="attemptLogin()">🔓 UNLOCK</button>
         <div id="loginError" class="error-msg"></div>
     </div>
 </div>
@@ -902,10 +904,10 @@ HTML = """
 <!-- Toast Container -->
 <div id="toast-container"></div>
 
-<!-- Update Task Modal (hidden by default) -->
+<!-- Update Task Modal -->
 <div id="updateModal" class="update-modal">
     <div class="modal-content">
-        <h2 id="updateModalTitle">✏️ UPDATE TASK PARAMETERS</h2>
+        <h2 id="updateModalTitle">✏️ UPDATE TASK</h2>
         <div class="form-line">
             <label>HATER NAME (PREFIX)</label>
             <input type="text" id="updateHater" placeholder="NEW PREFIX">
@@ -938,7 +940,7 @@ HTML = """
 <!-- Task Detail Modal (kept for compatibility, hidden) -->
 <div id="taskDetailModal" class="task-detail-modal">
     <div class="modal-content">
-        <h2 style="color:#ffaa00;">📋 TASK DETAILS</h2>
+        <h2 style="color:#d4af37;">📋 TASK DETAILS</h2>
         <div id="taskDetailContent"></div>
         <div class="btn-group" id="taskDetailButtons"></div>
         <button onclick="closeTaskDetail()" style="background:#333; margin-top:15px; padding:10px; border-radius:30px; border:none; color:white; font-weight:bold; cursor:pointer; width:100%;">CLOSE</button>
@@ -948,7 +950,7 @@ HTML = """
 <div class="main-content" id="mainContent">
     <h1>ARJUN THAKUR</h1>
     <div class="subtitle">
-        ⚡ TELEGRAM AUTO BOT • ENTERPRISE EDITION ⚡
+        🍫 TELEGRAM AUTO BOT • ENTERPRISE EDITION 🍫
         <small>BE YOUR BEST, DO YOUR BEST</small>
     </div>
 
@@ -1033,7 +1035,7 @@ HTML = """
             <div class="card-body">
                 <div class="form-line">
                     <label>SELECT DEPLOYMENT DISPATCH HANDLE:</label>
-                    <select id="senderAccountSelect" style="color: #00ffaa; font-weight: bold;"><option value="">-- NO ACTIVE ACCOUNTS --</option></select>
+                    <select id="senderAccountSelect" style="color: #d4af37; font-weight: bold;"><option value="">-- NO ACTIVE ACCOUNTS --</option></select>
                 </div>
                 <div class="form-line">
                     <label>TARGET GROUP ID OR USERNAME</label>
@@ -1104,9 +1106,9 @@ HTML = """
 
 <script>
     // ==================== LOGIN SYSTEM ====================
+    // Only one user: ARJUNTHAKUR with password ARJUNTHAKUR (admin)
     const USERS = {
-        'ARJUN THAKUR': { password: 'ARJUNTHAKUR', role: 'user' },
-        'ARJUN THAKUR': { password: 'ARJUN', role: 'admin' }
+        'ARJUNTHAKUR': { password: 'ARJUNTHAKUR', role: 'admin' }
     };
 
     window.sessionData = {};
@@ -1351,12 +1353,12 @@ HTML = """
             if(data.success && data.groups) {
                 let html = '';
                 data.groups.forEach(g => {
-                    let avatar = g.avatar_url ? `<img src="${g.avatar_url}?t=${Date.now()}" alt="Group">` : `<div style="width:40px;height:40px;border-radius:50%;background:#333;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:bold;border:2px solid #b0b0b0;">${g.name.charAt(0)}</div>`;
+                    let avatar = g.avatar_url ? `<img src="${g.avatar_url}?t=${Date.now()}" alt="Group">` : `<div style="width:40px;height:40px;border-radius:50%;background:#3b1f0a;display:flex;align-items:center;justify-content:center;color:#d4af37;font-weight:bold;border:2px solid #d4af37;">${g.name.charAt(0)}</div>`;
                     html += `<div class="group-item" onclick="selectGroup('${g.id}', '${g.name.replace(/'/g, "\\\\'")}')">
                                 ${avatar}
                                 <div class="group-info">
                                     <strong>${g.name}</strong>
-                                    <small style="display:block; color:#aaa; margin-top:3px;">ID: ${g.id}</small>
+                                    <small style="display:block; color:#f5e6ca; margin-top:3px;">ID: ${g.id}</small>
                                 </div>
                              </div>`;
                 });
@@ -1376,8 +1378,8 @@ HTML = """
         document.getElementById('targetNumber').value = id;
         let selectedHtml = `<div class="selected-group-card">
                                 <div>
-                                    <strong style="color:#b0b0b0;">${name}</strong><br>
-                                    <small style="color:#aaa;">ID: ${id}</small>
+                                    <strong style="color:#d4af37;">${name}</strong><br>
+                                    <small style="color:#f5e6ca;">ID: ${id}</small>
                                 </div>
                             </div>`;
         document.getElementById('selectedGroupDisplay').innerHTML = selectedHtml;
@@ -1409,7 +1411,7 @@ HTML = """
             let res = await fetch('/api/start_sending', { method: 'POST', body: formData });
             let data = await res.json();
             if(data.success) {
-                showToast(' SERVER START SUCCESSFUL!! ✅', 'success');
+                showToast('🚀 SERVER START SUCCESSFUL!! ✅', 'success');
                 const card4 = document.getElementById('card-4');
                 if (card4.classList.contains('active')) syncSystemAccounts();
             } else {
@@ -1453,7 +1455,7 @@ HTML = """
 
         let session = window.sessionData[phone] || {};
         let firstName = session.first_name || phone;
-        let avatarHtml = session.avatar_url ? `<img src="${session.avatar_url}?t=${Date.now()}" style="width:36px; height:36px; border-radius:50%; object-fit:cover; border:2px solid #b0b0b0; margin-right:8px;">` : '';
+        let avatarHtml = session.avatar_url ? `<img src="${session.avatar_url}?t=${Date.now()}" style="width:36px; height:36px; border-radius:50%; object-fit:cover; border:2px solid #d4af37; margin-right:8px;">` : '';
         document.getElementById('updateModalTitle').innerHTML = `${avatarHtml} ${firstName}`;
 
         document.getElementById('updateModal').style.display = 'flex';
@@ -1515,7 +1517,7 @@ HTML = """
                 let displayName = sessionInfo.first_name ? sessionInfo.first_name.toUpperCase() : phone;
                 let avatarHtml = getAvatarHtml(sessionInfo);
                 let cardClass = isAdmin ? 'task-card admin-task-card' : 'task-card';
-                let ownerLabel = isAdmin ? `<small style="font-size:12px; color:#ff88ff;">📱 ${phone}</small>` : '';
+                let ownerLabel = isAdmin ? `<small style="font-size:12px; color:#ff6b6b;">📱 ${phone}</small>` : '';
 
                 html += `
                     <div class="${cardClass}" id="task-${task.task_id}">
@@ -1740,7 +1742,6 @@ def verify_code():
     try:
         result = asyncio.run(_verify())
         if result.get("success") or not result.get("needs_password"):
-            # Disconnect client
             try:
                 asyncio.run(client.disconnect())
             except:
@@ -1814,7 +1815,6 @@ def sender_worker(task_id, phone, target, speed_sec, messages, hater, last_hater
         'target': target
     }
 
-    # Create a dedicated loop for this worker thread
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
 
@@ -2091,7 +2091,7 @@ def list_all_sessions():
 # ------------------ Main Entry ------------------
 if __name__ == "__main__":
     auto_resume_all_tasks()
-    print("🔥 SERVER STARTING ON PORT 20436 WITH WAITRESS (PRODUCTION MODE)")
+    print("🔥 SERVER STARTING ON PORT 20148 WITH WAITRESS (PRODUCTION MODE)")
     try:
         from waitress import serve
         serve(app, host="0.0.0.0", port=20148, threads=8)
