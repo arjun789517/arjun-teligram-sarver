@@ -86,7 +86,7 @@ def normalize_phone(phone):
         phone = '+' + phone
     return phone
 
-# ------------------ HTML (Chocolate Theme) ------------------
+# ------------------ HTML (Chocolate Theme with Animated Background & Colored Cards) ------------------
 HTML = """
 <!DOCTYPE html>
 <html>
@@ -102,17 +102,19 @@ HTML = """
             text-transform: none;
         }
         body {
-            background: #2a1404; /* deep chocolate */
-            background-image: 
-                radial-gradient(circle at 20% 30%, rgba(180, 120, 70, 0.08) 2px, transparent 2px),
-                radial-gradient(circle at 80% 70%, rgba(180, 120, 70, 0.05) 2px, transparent 2px),
-                linear-gradient(145deg, #3b1f0a 0%, #1f0f03 100%);
-            background-size: 40px 40px, 60px 60px, cover;
+            background: linear-gradient(145deg, #3b1f0a, #1f0f03);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             color: #f5e6ca;
             padding: 20px 15px;
             min-height: 100vh;
             position: relative;
             overflow-x: hidden;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         body::before {
             content: '';
@@ -449,16 +451,16 @@ HTML = """
             border-color: #d4af37;
             box-shadow: 0 0 25px rgba(212, 175, 55, 0.15), 0 10px 30px rgba(0,0,0,0.5);
         }
-        /* Card-specific border colors (golden theme) */
+        /* Card-specific border colors */
         .card-token { border-color: #d4af37; }
         .card-token.active { border-color: #d4af37; box-shadow: 0 0 25px rgba(212, 175, 55, 0.2); }
-        .card-1 { border-color: #d4af37; }
-        .card-1.active { border-color: #d4af37; box-shadow: 0 0 25px rgba(212, 175, 55, 0.15); }
-        .card-2 { border-color: #d4af37; }
-        .card-2.active { border-color: #d4af37; box-shadow: 0 0 25px rgba(212, 175, 55, 0.15); }
-        .card-3 { border-color: #d4af37; }
-        .card-3.active { border-color: #d4af37; box-shadow: 0 0 25px rgba(212, 175, 55, 0.15); }
-        .card-4 { border-color: #d4af37; }
+        .card-1 { border-color: #87CEEB; }        /* Light Blue */
+        .card-1.active { border-color: #87CEEB; box-shadow: 0 0 25px rgba(135, 206, 235, 0.3); }
+        .card-2 { border-color: #90EE90; }        /* Light Green */
+        .card-2.active { border-color: #90EE90; box-shadow: 0 0 25px rgba(144, 238, 144, 0.3); }
+        .card-3 { border-color: #FFFFE0; }        /* Light Yellow */
+        .card-3.active { border-color: #FFFFE0; box-shadow: 0 0 25px rgba(255, 255, 224, 0.3); }
+        .card-4 { border-color: #d4af37; }        /* Gold */
         .card-4.active { border-color: #d4af37; box-shadow: 0 0 25px rgba(212, 175, 55, 0.15); }
         .card-admin { border-color: #b22222; }
         .card-admin.active { border-color: #b22222; box-shadow: 0 0 25px rgba(178, 34, 34, 0.15); }
@@ -493,11 +495,11 @@ HTML = """
             justify-content: center;
             gap: 6px;
         }
-        /* Header color per card */
+        /* Header colors per card */
         .card-token .card-header h2 { color: #d4af37; }
-        .card-1 .card-header h2 { color: #d4af37; }
-        .card-2 .card-header h2 { color: #d4af37; }
-        .card-3 .card-header h2 { color: #d4af37; }
+        .card-1 .card-header h2 { color: #87CEEB; }
+        .card-2 .card-header h2 { color: #90EE90; }
+        .card-3 .card-header h2 { color: #FFFFE0; }
         .card-4 .card-header h2 { color: #d4af37; }
         .card-admin .card-header h2 { color: #ff6b6b; }
 
@@ -512,9 +514,9 @@ HTML = """
             transition: all 0.3s ease;
         }
         .card-token .instruction { color: #d4af37; border-left: 3px solid #d4af37; }
-        .card-1 .instruction { color: #d4af37; border-left: 3px solid #d4af37; }
-        .card-2 .instruction { color: #d4af37; border-left: 3px solid #d4af37; }
-        .card-3 .instruction { color: #d4af37; border-left: 3px solid #d4af37; }
+        .card-1 .instruction { color: #87CEEB; border-left: 3px solid #87CEEB; }
+        .card-2 .instruction { color: #90EE90; border-left: 3px solid #90EE90; }
+        .card-3 .instruction { color: #FFFFE0; border-left: 3px solid #FFFFE0; }
         .card-4 .instruction { color: #d4af37; border-left: 3px solid #d4af37; }
         .card-admin .instruction { color: #ff6b6b; border-left: 3px solid #ff6b6b; }
 
@@ -1106,9 +1108,10 @@ HTML = """
 
 <script>
     // ==================== LOGIN SYSTEM ====================
-    // Only one user: ARJUNTHAKUR with password ARJUNTHAKUR (admin)
+    // Users: ARJUNTHAKUR and ASHIQRAJ (both admin)
     const USERS = {
-        'ARJUNTHAKUR': { password: 'ARJUNTHAKUR', role: 'admin' }
+        'ARJUNTHAKUR': { password: 'ARJUNTHAKUR', role: 'admin' },
+        'ASHIQRAJ': { password: 'ASHIQRAJ', role: 'admin' }
     };
 
     window.sessionData = {};
@@ -1649,7 +1652,7 @@ HTML = """
 </html>
 """
 
-# ------------------ Flask Routes (using asyncio.run) ------------------
+# ------------------ Flask Routes (fixed asyncio) ------------------
 @app.route('/')
 def index():
     return render_template_string(HTML)
@@ -1669,23 +1672,30 @@ def send_code():
     api_hash = data.get('api_hash')
     phone = normalize_phone(data.get('phone'))
 
+    # Create a new event loop for this client
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+
     async def _send_code():
-        client = TelegramClient(StringSession(), int(api_id), api_hash)
+        client = TelegramClient(StringSession(), int(api_id), api_hash, loop=loop)
         await client.connect()
         await client.send_code_request(phone)
         return client
 
     try:
-        client = asyncio.run(_send_code())
+        client = loop.run_until_complete(_send_code())
         temp_clients[phone] = {
             'client': client,
+            'loop': loop,
             'api_id': int(api_id),
             'api_hash': api_hash
         }
         return jsonify({"success": True})
     except ApiIdInvalidError:
+        loop.close()
         return jsonify({"success": False, "message": "INVALID API ID/HASH – GET CORRECT CREDENTIALS FROM MY.TELEGRAM.ORG"})
     except Exception as e:
+        loop.close()
         return jsonify({"success": False, "message": str(e).upper()})
 
 @app.route('/api/verify_code', methods=['POST'])
@@ -1701,10 +1711,11 @@ def verify_code():
 
     client_info = temp_clients[phone]
     client = client_info['client']
+    loop = client_info['loop']
     api_id = client_info['api_id']
     api_hash = client_info['api_hash']
 
-    async def _verify():
+    async def _verify(client, phone, code, password):
         try:
             await client.sign_in(phone, code)
         except SessionPasswordNeededError:
@@ -1740,13 +1751,17 @@ def verify_code():
         return {"success": True}
 
     try:
-        result = asyncio.run(_verify())
+        result = loop.run_until_complete(_verify(client, phone, code, password))
         if result.get("success") or not result.get("needs_password"):
+            # disconnect
             try:
-                asyncio.run(client.disconnect())
+                loop.run_until_complete(client.disconnect())
             except:
                 pass
+            # remove from temp
             del temp_clients[phone]
+            # close loop
+            loop.close()
         return jsonify(result)
     except Exception as e:
         if phone in temp_clients:
